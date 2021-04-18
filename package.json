@@ -1,0 +1,14 @@
+{
+  "name": "raspi-robot-server",
+  "version": "1.0.0",
+  "description": "Server, der als Schnittstelle zwischen Roboter und Client dient",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "socket.io": "^4.0.1"
+  }
+}
