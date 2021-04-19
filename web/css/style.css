@@ -1,0 +1,32 @@
+body {
+    background: #000;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+}
+
+#status {
+    height: 24px;
+    line-height: 24px;
+    font-size: 13px;
+    text-align: center;
+    background: linear-gradient(0deg, rgba(0,32,64,1) 0%, rgba(0,64,128,1) 100%);
+    color: #fff;
+    position: relative;
+    z-index: 2;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+#player {
+    display: flex;
+    height: calc(100vh - 24px);
+    align-items: center;
+    justify-content: center;
+}
+
+#player canvas {
+    width: 100%;
+    max-width: calc((100vh - 24px) / 9 * 16);
+    height: auto;
+}
