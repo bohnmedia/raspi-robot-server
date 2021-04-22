@@ -1,0 +1,9 @@
+{
+    "port": 8080,
+    "rooms": {
+        "room1": {
+            "name": "My first room",
+            "authToken": "RzDQOtxN9E2fW8iOk51spw9GftgKPDEgQxZ9uRbA7T0q4YaA7kKRKJWquDpqZlEG"
+        }
+    }
+}

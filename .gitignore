@@ -105,3 +105,6 @@ dist
 
 # Ignore sftp config
 sftp.json
+
+# Config
+config.json
