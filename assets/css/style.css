@@ -197,7 +197,7 @@ a {
     padding: 30px 20px;
     max-width: 600px;
     background: #fff;
-    font-size: 13px;
+    font-size: 15px;
     position: relative;
     box-shadow: 0 5px 20px rgb(0 0 0 / 25%);
 }
@@ -217,7 +217,7 @@ a {
 }
 
 #overlay .box .buttonset {
-    margin-top: 20px;
+    margin-top: 30px;
     display: flex;
     justify-content: flex-end;
 }

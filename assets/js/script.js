@@ -31,3 +31,7 @@ $('#request-control-button').click(function(){
 $('#request-control .button--success').click(function(){
     socket.emit('request-control');
 });
+
+socket.on("startTime", (startTime) => {
+    console.log(startTime);
+});
