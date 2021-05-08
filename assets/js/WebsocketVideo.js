@@ -27,13 +27,6 @@ class WebsocketVideo {
         this.loadingContainer = $('<div class="loading"/>');
         this.container.append(this.loadingContainer);
 
-        // Fenser ist nicht aktiv
-        document.addEventListener("visibilitychange", () => {
-            if (document.visibilityState === "hidden") {
-                this.pause();
-            }
-        });
-
         // Websocket-Verbindung
         socket.on('connect', () => {
 
