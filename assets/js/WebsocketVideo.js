@@ -12,6 +12,29 @@ class WebsocketVideo {
             }
         });
 
+        // Container
+        this.container = $('<div id="player"/>');
+        this.container.append(this.player.canvas);
+
+        // Pause
+        this.pauseContainer = $('<div class="pause"><i class="fas fa-play"></i></div>').hide();
+        this.container.append(this.pauseContainer);
+        this.pauseContainer.click(() => {
+            this.play();
+        });
+
+        // Loading
+        this.loadingContainer = $('<div class="loading"/>');
+        this.container.append(this.loadingContainer);
+
+        // Fenser ist nicht aktiv
+        document.addEventListener("visibilitychange", () => {
+            if (document.visibilityState === "hidden") {
+                this.pause();
+            }
+        });
+
+        // Websocket-Verbindung
         socket.on('connect', () => {
 
             socket.on('video', e => {
@@ -20,7 +43,7 @@ class WebsocketVideo {
                 if (chunkType === 5 && this.keyframebuffer > 0) {
                     this.keyframebuffer--;
                     if (this.keyframebuffer === 0) {
-                        $('#player .loading').fadeOut(300);
+                        $(this.loadingContainer).fadeOut(300);
                     }
                 }
                 this.player.decode(messageData);
@@ -30,6 +53,16 @@ class WebsocketVideo {
 
         });
 
+    }
+
+    pause() {
+        socket.emit('pause');
+        this.pauseContainer.fadeIn(300);
+    }
+
+    play() {
+        socket.emit('play');
+        this.pauseContainer.fadeOut(300);
     }
 
 }

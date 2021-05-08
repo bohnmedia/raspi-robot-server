@@ -1,22 +1,16 @@
 <%- include('includes/tinyhead.ejs'); %>
 <%- include('includes/headWithControls.ejs'); %>
-			<div id="player">
-				<div class="loading"></div>
-			</div>
+			<div id="playerWrapper"></div>
 			<div id="overlay">
 				<div class="inside">
-					<div id="overlay-invitation" class="box">
+					<div id="start-control" class="box">
 						<div class="button-close"><i class="fas fa-times"></i></div>
-						<h2>Einladungslink anfordern</h2>
-						<p>Damit möglichst jeder die Möglichkeit hat, den Roboter auszuprobieren und der Server nicht mit Anfragen bombardiert wird, benötigen wir eine E-Mail-Adresse, an die wir den Einladungslink zur Steuerung schicken können.</p>
-						<p>Diese E-Mail-Adresse dient lediglich zum Versand der Einladungs-Mail und wird nach der Steuerung des Roboters unverzüglich wieder aus unserem System entfernt. Die E-Mail-Adresse wird nicht an Dritte weitergegeben.</p>
-						<form method="post" id="form-invitation">
-							<div class="inputgroup">
-								<input type="email" name="email" placeholder="E-Mail-Adresse" id="form-invitation-email">
-								<button class="button" type="submit"><i class="fas fa-envelope"></i>Einladungslink anfordern</button>
-							</div>
-						</form>
-						<div id="form-invitation-message" class="response"></div>
+						<h2>Steuerung übernehmen</h2>
+						<p>Möchten Sie die Steuerung des Roboters in <span data-type="countdown"></span> übernehmen?</p>
+						<div class="buttonset">
+							<button class="button button--success">Ja</button>
+							<button class="button button-abort">Nein</button>
+						</div>
 					</div>
 				</div>
 			</div>

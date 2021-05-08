@@ -1,11 +1,13 @@
+const room = 'uturm';
+
 // Verbinde dich mit dem Server
 const socket = io("https://robot.bohn.media/",{
-    auth: {room: 'uturm'}
+    auth: {room: room}
 });
 
 // Erzeuge den Player
 const video = new WebsocketVideo(socket);
-document.getElementById('player').appendChild(video.player.canvas);
+$('#playerWrapper').append(video.container);
 
 // Overlay
 const overlay = $('#overlay');
@@ -23,6 +25,7 @@ $('#invitation-button').click(function(){
     overlay.find('.box').hide();
     overlay.find('#overlay-invitation').show();
     overlay.fadeIn(300);
+    video.pause();
 });
 
 // Einladungsmail verschicken
