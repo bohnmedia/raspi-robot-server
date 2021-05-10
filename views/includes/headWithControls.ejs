@@ -2,7 +2,17 @@
     <div class="header-logo">
         <h1>U-Roboter</h1>
     </div>
+    <div id="start-countdown" style="display:none">
+        Steuerung beginnt in
+        <span class="countdown"></span>
+    </div>
+    <div id="end-countdown" style="display:none">
+        Steuerung endet in
+        <span class="countdown"></span>
+    </div>
     <div class="header-control">
+        <div id="abort-control-button" class="button button-abort" style="display:none"><i class="fas fa-times"></i>Steuerung beenden</div>
+        <div id="abort-reservation-button" class="button button-abort" style="display:none"><i class="fas fa-times"></i>Reservierung abbrechen</div>
         <div id="request-control-button" class="button"><i class="fas fa-gamepad"></i>Steuerung übernehmen</div>
     </div>
 </header>

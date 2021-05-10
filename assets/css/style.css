@@ -225,3 +225,69 @@ a {
 #overlay .box .buttonset button {
     margin-left: 10px;
 }
+
+#start-countdown {
+    text-align: center;
+    color: #f60;
+}
+
+#start-countdown .countdown {
+    display: block;
+    font-weight: bold;
+}
+
+#end-countdown {
+    text-align: center;
+    color: #090;
+}
+
+#end-countdown .countdown {
+    display: block;
+    font-weight: bold;
+}
+
+#controls {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#controls div {
+    position: absolute;
+    width: 0;
+    height: 300px;
+    top: 0;
+    left: 150px;
+    z-index: 2;
+    opacity: .2;
+    cursor: pointer;
+}
+
+#controls div.active {
+    opacity: 1;
+    color: #090;
+}
+
+#controls div::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f062";
+    font-weight: 900;
+    display: inline-block;
+    font-size: 60px;
+    position: absolute;
+    top: 40px;
+    left: -30px;
+    width: 60px;
+    height: 60px;
+    line-height: 1;
+    text-align: center;
+}
+
+#controls div.upright { transform: rotate(45deg); z-index: 1; }
+#controls div.right { transform: rotate(90deg); }
+#controls div.downright { transform: rotate(135deg); z-index: 1; }
+#controls div.down { transform: rotate(180deg); }
+#controls div.downleft { transform: rotate(225deg); z-index: 1; }
+#controls div.left { transform: rotate(270deg); }
+#controls div.upleft { transform: rotate(315deg); z-index: 1; }

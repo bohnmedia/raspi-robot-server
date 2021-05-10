@@ -1,12 +1,40 @@
 <%- include('includes/tinyhead.ejs'); %>
 <%- include('includes/headWithControls.ejs'); %>
 			<div id="playerWrapper"></div>
+			<div id="controls">
+				<div class="up"></div>
+				<div class="upright"></div>
+				<div class="right"></div>
+				<div class="downright"></div>
+				<div class="down"></div>
+				<div class="downleft"></div>
+				<div class="left"></div>
+				<div class="upleft"></div>
+			</div>
 			<div id="overlay">
 				<div class="inside">
 					<div id="request-control" class="box">
 						<div class="button-close"><i class="fas fa-times"></i></div>
 						<h2>Steuerung übernehmen</h2>
 						<p>Möchten Sie die Steuerung des Roboters <span data-type="control-countdown"></span> übernehmen?</p>
+						<div class="buttonset">
+							<button class="button button--success"><i class="fas fa-check"></i>Ja</button>
+							<button class="button button-abort"><i class="fas fa-times"></i>Nein</button>
+						</div>
+					</div>
+					<div id="abort-reservation" class="box">
+						<div class="button-close"><i class="fas fa-times"></i></div>
+						<h2>Reservierung abbrechen</h2>
+						<p>Möchten Sie die Reservierung zur Steuerung des Roboters aufheben?</p>
+						<div class="buttonset">
+							<button class="button button--success"><i class="fas fa-check"></i>Ja</button>
+							<button class="button button-abort"><i class="fas fa-times"></i>Nein</button>
+						</div>
+					</div>
+					<div id="abort-control" class="box">
+						<div class="button-close"><i class="fas fa-times"></i></div>
+						<h2>Steuerung beenden</h2>
+						<p>Möchten Sie die Steuerung des Roboters beenden?</p>
 						<div class="buttonset">
 							<button class="button button--success"><i class="fas fa-check"></i>Ja</button>
 							<button class="button button-abort"><i class="fas fa-times"></i>Nein</button>
