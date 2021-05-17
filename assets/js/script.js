@@ -1,3 +1,5 @@
+var controlsEnabled = false;
+
 const room = 'uturm';
 const interval = {};
 
@@ -21,7 +23,7 @@ const showOverlay = function(selector) {
 }
 
 // SetCountdown
-const setCountdown = function(selector, secondsInt) {
+const setCountdown = function(selector, secondsInt, callback) {
 
     const performanceStart = performance.now();
     const countdown = $(selector);
@@ -40,6 +42,7 @@ const setCountdown = function(selector, secondsInt) {
         if (rest === 0 && interval[selector]) {
             window.clearInterval(interval[selector]);
             delete interval[selector];
+            if (callback) callback();
         }
 
     }
@@ -114,6 +117,8 @@ socket.on("secondsToEnd", seconds => {
     $('#abort-reservation-button').hide();
     $('#abort-control-button').show();
     setEndCountdown(seconds);
+    $('#controls').fadeIn(300);
+    controlsEnabled = true;
 });
 
 socket.on("abortControl", () => {
@@ -122,4 +127,13 @@ socket.on("abortControl", () => {
     $('#request-control-button').show();
     stopStartCountdown();
     stopEndCountdown();
+    $('#controls').fadeOut(300);
+    controlsEnabled = false;
+});
+
+socket.on("secondsToNext", seconds => {
+    $("#controlCountdown").html('in <span></span>');
+    setCountdown("#controlCountdown span", seconds, () => {
+        $("#controlCountdown").html('jetzt');
+    });
 });

@@ -46,6 +46,7 @@ const updateActiveKeys = function () {
 const updateKeys = function () {
 
     if (directionInterval) window.clearInterval(directionInterval);
+    if (!controlsEnabled) return;
 
     if (direction.x !== 0 || direction.y !== 0) {
         directionInterval = window.setInterval(sendKeys, 100);

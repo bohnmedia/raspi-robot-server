@@ -251,6 +251,7 @@ a {
     height: 300px;
     margin: 0 auto;
     position: relative;
+    display: none;
 }
 
 #controls div {
